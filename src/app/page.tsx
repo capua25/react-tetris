@@ -1,103 +1,94 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+    <div className="border_div m-auto w-full max-w-4xl">
+        <div className="game">
+            <div className="container left">
+                <h1>TETRIS</h1>
+                <h2>User</h2>
+                <div id="user"></div>
+                <button id="start-button">START</button>
+                <button id="pause-button">PAUSE</button>
+                <button id="reset-button">RESET</button>
+                <div id="userScores">
+                    <h3>User Scores</h3>
+                    <div className="list">
+                        <ul>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+                        </ul>
+                    </div>
+                </div>
+                <button id="delete-scores">DELETE USER SCORES</button>
+                <button id="logOut">LOG OUT</button>
+            </div>
+            <div className="tetris">
+                <canvas id="tetris" className="h-full w-80"></canvas>
+            </div>
+            <div className="container right">
+                <div className="next info">
+                    <h2>Next</h2>
+                    <canvas id="next"></canvas>
+                </div>
+                <div className="score info">
+                    <h2>Score</h2>
+                    <div id="score">0</div>
+                </div>
+                <div className="level info">
+                    <h2>Level</h2>
+                    <div id="level">0</div>
+                </div>
+                <div className="lines info">
+                    <h2>Lines</h2>
+                    <div id="lines">0</div>
+                </div>
+                <div id="bestScores">
+                    <h3>Best Scores</h3>
+                    <div className="list">
+                        <ul>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
+
+    <section className="modal_container">
+        <div className="modal">
+            <h1 className="modal_h1">Game Over</h1>
+            <h2 className="h2_modal">Your score: </h2>
+            <h2 id="score_modal">0</h2>
+            <button id="save_score">SAVE SCORE</button>
+            <button id="restart_button">RESTART</button>
+        </div>
+    </section>
+
+    <div className="login_modal">
+        <div className="border_login">
+            <div className="container login_container">
+                <h1>Tetris Game</h1>
+                <h2>Login</h2>
+                <form className="container" action="#">
+                    <label>Username</label>
+                    <input type="text" name="username" id="username" placeholder="Enter your username"/>
+                    <label>Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your password"/>
+                    <input id="submit" type="submit" value="LOGIN"/>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div className="alert_modal">
+        <div className="alert">
+            <div className="alert_container">
+                <h1 className="alert_h1">Alert</h1>
+                <h2 className="alert_h2"></h2>
+                <button id="alert_button">GOT IT</button>
+                <button id="create_user" className="hide_btn">CREATE NEW USER</button>
+            </div>
+        </div>
+    </div>
+    </>
   );
 }

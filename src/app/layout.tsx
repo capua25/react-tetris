@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localfont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const arcade_font = localfont({
+  src: './resources/fonts/ARCADE_N.ttf'
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,9 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${arcade_font.className} antialiased`}
       >
         {children}
+        <Script src="tetris.js" strategy="afterInteractive" />
       </body>
     </html>
   );
