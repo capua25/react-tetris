@@ -41,7 +41,7 @@ const pieces = [
     },
     {
         name: "O",
-        color: "#eaedee",
+        color: "#7d7d7d",
         position: { x: 5, y: 0 },
         shape: [
             [1, 1],
@@ -369,4 +369,25 @@ restartBtn.addEventListener("click", () => {
     nextPiece()
     updateTable()
     drawFuturePiece()
+})
+
+//Modal------------------------------------------------------------------------------------------------------------------------------
+const modal = document.getElementById("scoresModal")
+const saveScore = document.getElementById("save_score")
+const restartGame = document.getElementById("restart_button")
+
+const openModal = () => {
+    modal.classList.remove("hidden")
+}
+const closeModal = () => {
+    modal.classList.add("hidden")
+}
+
+restartGame.addEventListener("click", () => {
+    closeModal()
+    restartBtn.click()
+})
+
+saveScore.addEventListener("click", () => {
+    closeModal()
 })

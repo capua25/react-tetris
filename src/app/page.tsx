@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-    <div className="border_div mx-auto h-lvh w-full max-w-4xl">
+    <div className="border_div mx-auto my-auto w-full max-w-4xl">
         <div className="game">
             <div className="container left">
                 <h1>TETRIS</h1>
@@ -51,7 +51,7 @@ export default function Home() {
         </div>
     </div>
 
-    <section className="modal_container">
+    <section id="scoresModal" className="hidden flex h-full w-full fixed top-0 left-0 justify-center items-center">
         <div className="modal">
             <h1 className="modal_h1">Game Over</h1>
             <h2 className="h2_modal">Your score: </h2>
