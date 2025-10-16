@@ -127,7 +127,7 @@ function drawTable() {
             if (value !== 0) {
                 table.fillStyle = pieces[piece].color
                 table.strokeStyle = "white"
-                table.lineWidth = 0.02
+                table.lineWidth = 0.05
                 table.fillRect(x, y, 1, 1)
                 table.strokeRect(x, y, 1, 1)
             }
@@ -139,7 +139,7 @@ function drawTable() {
             if (value !== 0) {
                 table.fillStyle = pieces[piece].color
                 table.strokeStyle = "white"
-                table.lineWidth = 0.02
+                table.lineWidth = 0.05
                 table.fillRect(x + pieces[piece].position.x, y + pieces[piece].position.y, 1, 1)
                 table.strokeRect(x + pieces[piece].position.x, y + pieces[piece].position.y, 1, 1)
             }
