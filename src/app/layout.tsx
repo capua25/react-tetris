@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${arcade_font.className} antialiased`}
+        className={`${arcade_font.className}`}
       >
         {children}
         <Script src="tetris.js" strategy="afterInteractive" />

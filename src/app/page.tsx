@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-    <div className="border_div m-auto w-full max-w-4xl">
+    <div className="border_div mx-auto h-lvh w-full max-w-4xl">
         <div className="game">
             <div className="container left">
                 <h1>TETRIS</h1>
@@ -18,8 +18,6 @@ export default function Home() {
                         </ul>
                     </div>
                 </div>
-                <button id="delete-scores">DELETE USER SCORES</button>
-                <button id="logOut">LOG OUT</button>
             </div>
             <div className="tetris">
                 <canvas id="tetris" className="h-full w-80"></canvas>
@@ -62,33 +60,6 @@ export default function Home() {
             <button id="restart_button">RESTART</button>
         </div>
     </section>
-
-    <div className="login_modal">
-        <div className="border_login">
-            <div className="container login_container">
-                <h1>Tetris Game</h1>
-                <h2>Login</h2>
-                <form className="container" action="#">
-                    <label>Username</label>
-                    <input type="text" name="username" id="username" placeholder="Enter your username"/>
-                    <label>Password</label>
-                    <input type="password" name="password" id="password" placeholder="Enter your password"/>
-                    <input id="submit" type="submit" value="LOGIN"/>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div className="alert_modal">
-        <div className="alert">
-            <div className="alert_container">
-                <h1 className="alert_h1">Alert</h1>
-                <h2 className="alert_h2"></h2>
-                <button id="alert_button">GOT IT</button>
-                <button id="create_user" className="hide_btn">CREATE NEW USER</button>
-            </div>
-        </div>
-    </div>
     </>
   );
 }
